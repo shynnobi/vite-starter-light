@@ -44,7 +44,7 @@ src/
 1. Clone the project
 
 ```bash
-git clone [repository-url]
+git clone https://github.com/shynnobi/vite-starter-light.git
 cd vite-starter-light
 ```
 
@@ -114,3 +114,5 @@ Testing is configured with:
 - `eslint.config.js` - ESLint rules
 - `.prettierrc` - Prettier formatting rules
 - `jest.config.cjs` - Jest testing configuration
+- `component.json` - shadcn/ui component configuration
+- `commitlint.config.js` - Commit-lint configuration
