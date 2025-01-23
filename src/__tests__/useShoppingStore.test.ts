@@ -90,4 +90,16 @@ describe('useShoppingStore', () => {
     expect(store.getPurchasedArticles()[0].name).toBe('Pommes');
     expect(store.getUnpurchasedArticles()[0].name).toBe('Poires');
   });
+
+  it('should remove an article', () => {
+    const store = useShoppingStore.getState();
+    store.addArticle('Pommes', 2, 150, 'kg');
+
+    let articles = useShoppingStore.getState().articles;
+    expect(articles).toHaveLength(1);
+
+    store.removeArticle('Pommes');
+    articles = useShoppingStore.getState().articles;
+    expect(articles).toHaveLength(0);
+  });
 });

@@ -7,9 +7,9 @@ export enum ShoppingEvents {
 
 export interface Article {
   name: string;
-  quantity: number;
-  unitPrice: number;
-  unit: string;
+  quantity?: number;
+  unitPrice?: number;
+  unit?: string;
   isPurchased: boolean;
 }
 
@@ -29,7 +29,12 @@ export interface ShoppingStore {
   articles: Article[];
 
   // Actions
-  addArticle: (name: string, quantity: number, unitPrice: number, unit: string) => AddArticleResult;
+  addArticle: (
+    name: string,
+    quantity: number | undefined,
+    unitPrice: number | undefined,
+    unit: string | undefined
+  ) => AddArticleResult;
   togglePurchased: (name: string) => void;
   updateQuantity: (name: string, quantity: number) => void;
   removeArticle: (name: string) => void;

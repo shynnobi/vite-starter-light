@@ -1,9 +1,14 @@
-import { ArticleItem } from './ArticleItem';
 import { useShoppingStore } from '@/stores/useShoppingStore';
+import { ArticleItem } from './ArticleItem';
 
 export function ArticleList() {
-  const { getUnpurchasedArticles, getPurchasedArticles, togglePurchased, updateQuantity } =
-    useShoppingStore();
+  const {
+    getUnpurchasedArticles,
+    getPurchasedArticles,
+    togglePurchased,
+    updateQuantity,
+    removeArticle,
+  } = useShoppingStore();
 
   const unpurchasedArticles = getUnpurchasedArticles();
   const purchasedArticles = getPurchasedArticles();
@@ -22,6 +27,7 @@ export function ArticleList() {
                 article={article}
                 onTogglePurchased={togglePurchased}
                 onUpdateQuantity={updateQuantity}
+                onRemoveArticle={removeArticle}
               />
             ))
           )}
@@ -38,6 +44,7 @@ export function ArticleList() {
                 article={article}
                 onTogglePurchased={togglePurchased}
                 onUpdateQuantity={updateQuantity}
+                onRemoveArticle={removeArticle}
               />
             ))}
           </div>

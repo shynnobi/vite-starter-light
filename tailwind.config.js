@@ -69,7 +69,7 @@ export default {
         ],
       },
       fontFamily: {
-        sans: ['Newsreader', 'system-ui', '-apple-system', 'serif'],
+        sans: ['Funnel Sans', 'system-ui', '-apple-system', 'serif'],
         heading: ['Funnel Sans', 'system-ui', '-apple-system', 'sans-serif'],
       },
       colors: {

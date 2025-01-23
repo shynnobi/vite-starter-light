@@ -6,9 +6,9 @@ export const useShoppingStore = create<ShoppingStore>((set, get) => ({
 
   addArticle: (
     name: string,
-    quantity: number,
-    unitPrice: number,
-    unit: string = 'unit'
+    quantity?: number,
+    unitPrice?: number,
+    unit?: string
   ): AddArticleResult => {
     const normalizedName = name.trim();
     const articles = get().articles;
@@ -19,13 +19,15 @@ export const useShoppingStore = create<ShoppingStore>((set, get) => ({
       return {
         status: 'DUPLICATE',
         message: `Un article nommé "${normalizedName}" existe déjà dans votre liste.`,
-        suggestions: {
-          updateQuantity: {
-            message: `Voulez-vous ajouter ${quantity} à la quantité existante (${existingArticle.quantity}) ?`,
-            currentQuantity: existingArticle.quantity,
-            additionalQuantity: quantity,
-          },
-        },
+        suggestions: quantity
+          ? {
+              updateQuantity: {
+                message: `Voulez-vous ajouter ${quantity} à la quantité existante (${existingArticle.quantity || 0}) ?`,
+                currentQuantity: existingArticle.quantity || 0,
+                additionalQuantity: quantity,
+              },
+            }
+          : undefined,
       };
     }
 
@@ -35,9 +37,9 @@ export const useShoppingStore = create<ShoppingStore>((set, get) => ({
         ...state.articles,
         {
           name: normalizedName,
-          quantity,
-          unitPrice,
-          unit,
+          ...(quantity && { quantity }),
+          ...(unitPrice && { unitPrice }),
+          ...(unit && { unit }),
           isPurchased: false,
         },
       ],
@@ -70,14 +72,23 @@ export const useShoppingStore = create<ShoppingStore>((set, get) => ({
   },
 
   removeArticle: (name: string) => {
-    set((state) => ({
-      articles: state.articles.filter((article) => article.name !== name),
-    }));
+    console.log('Store: removing article:', name);
+    console.log('Store: current articles:', get().articles);
+    set((state) => {
+      const newArticles = state.articles.filter((article) => article.name !== name);
+      console.log('Store: articles after removal:', newArticles);
+      return { articles: newArticles };
+    });
   },
 
   // Getters
   getTotalPrice: () => {
-    return get().articles.reduce((sum, article) => sum + article.quantity * article.unitPrice, 0);
+    return get().articles.reduce((sum, article) => {
+      if (article.quantity && article.unitPrice) {
+        return sum + article.quantity * article.unitPrice;
+      }
+      return sum;
+    }, 0);
   },
 
   getFormattedTotalPrice: () => {
@@ -87,7 +98,7 @@ export const useShoppingStore = create<ShoppingStore>((set, get) => ({
   getFormattedPurchasedTotalPrice: () => {
     const total = get()
       .getPurchasedArticles()
-      .reduce((sum, article) => sum + article.quantity * article.unitPrice, 0);
+      .reduce((sum, article) => sum + (article.quantity || 0) * (article.unitPrice || 0), 0);
     return (total / 100).toFixed(2) + '€';
   },
 

@@ -1,4 +1,4 @@
-import { ArticleForm } from '@/components/shopping/ArticleForm';
+import { AddArticleForm } from '@/components/shopping/AddArticleForm';
 import { ArticleList } from '@/components/shopping/ArticleList';
 import { useShoppingStore } from '@/stores/useShoppingStore';
 
@@ -21,7 +21,7 @@ function App() {
           </div>
         </div>
 
-        <ArticleForm />
+        <AddArticleForm />
         <ArticleList />
       </div>
     </div>
