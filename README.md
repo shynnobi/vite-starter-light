@@ -2,6 +2,37 @@
 
 A modern, lightweight React template using Vite, optimized for both development and production environments.
 
+## 📥 Using This Template
+
+You can start a new project using this template in several ways:
+
+### 1. GitHub Template (Recommended)
+1. Visit [vite-starter-light](https://github.com/shynnobi/vite-starter-light)
+2. Click the green "Use this template" button
+3. Choose "Create a new repository"
+4. Fill in your repository details
+5. Clone your new repository and start coding!
+
+### 2. Using degit
+```bash
+# Create a new project with degit
+pnpm dlx degit shynnobi/vite-starter-light my-app
+
+# Enter the project directory
+cd my-app
+
+# Initialize a new git repository
+git init
+
+# Install dependencies
+pnpm install
+```
+
+### 3. Using create-vite
+```bash
+pnpm create vite my-app --template github:shynnobi/vite-starter-light
+```
+
 ## 🚀 Features
 
 - ⚡️ **Vite** - Lightning fast build tool
@@ -38,27 +69,6 @@ src/
 - `pnpm lint` - Check and fix linting errors
 - `pnpm format` - Format code with Prettier
 - `pnpm clean` - Clean build artifacts
-
-## 🚦 Getting Started
-
-1. Clone the project
-
-```bash
-git clone https://github.com/shynnobi/vite-starter-light.git
-cd vite-starter-light
-```
-
-2. Install dependencies
-
-```bash
-pnpm install
-```
-
-3. Start development server
-
-```bash
-pnpm dev
-```
 
 ## 📝 Commit Convention
 
