@@ -20,9 +20,9 @@ For a fresh project without Git history:
 pnpm dlx degit shynnobi/vite-starter-light my-app
 cd my-app
 git init
-pnpm install
 git add .
-git commit -m "Initial commit"
+git commit -m "chore: initial commit"
+pnpm install
 pnpm dev
 ```
 
