@@ -20,8 +20,8 @@ For a fresh project without Git history:
 pnpm dlx degit shynnobi/vite-starter-light my-app
 cd my-app
 pnpm install
-git init  # Initialize a fresh Git repository
-pnpm dev  # Start development server
+git init
+pnpm dev
 ```
 
 📌 **Why use `degit`?**
