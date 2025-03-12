@@ -12,33 +12,44 @@ A modern, lightweight React template using Vite.
 
 ## 🚦 Getting Started
 
-### 1. GitHub Template (Recommended)
+### 1. Clean Start with degit (Recommended)
 
-1. Visit [vite-starter-light](https://github.com/shynnobi/vite-starter-light)
-2. Click "Use this template" > "Create a new repository"
-3. Clone your new repository:
-
-```bash
-git clone https://github.com/shynnobi/vite-starter-light.git
-cd my-app
-pnpm install  # or npm install, or yarn
-pnpm dev      # start development server
-```
-
-Note: This method will include the Git history of the template.
-
-### 2. Using degit (Clean Start)
-
-This is the recommended method if you want to start with a clean Git history:
+For a fresh project without Git history:
 
 ```bash
 pnpm dlx degit shynnobi/vite-starter-light my-app
 cd my-app
 pnpm install
 git init  # Initialize a fresh Git repository
+pnpm dev  # Start development server
 ```
 
+📌 **Why use `degit`?**
+
+- No `.git` folder → You start with a clean history
+- Faster than `git clone`
+- Ideal for starting fresh projects
+
+### 2. GitHub Template
+
+This method creates a new repository from the template while preserving the Git history.
+
+1. Visit [vite-starter-light](https://github.com/shynnobi/vite-starter-light)
+2. Click "Use this template" > "Create a new repository"
+3. Clone your new repository:
+
+```bash
+git clone https://github.com/shynnobi/vite-starter-light.git my-app
+cd my-app
+pnpm install  # or npm install, or yarn
+pnpm dev      # start development server
+```
+
+📌 **Note:** This method includes the full Git history of the template. If you prefer a clean start without commit history, use the `degit` method above.
+
 ### 3. Using create-vite
+
+This method fetches the latest version of the template from GitHub, but may not always be perfectly in sync.
 
 ```bash
 pnpm create vite my-app --template github:shynnobi/vite-starter-light
