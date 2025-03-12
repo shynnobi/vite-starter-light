@@ -19,7 +19,6 @@ export default {
             // 72px
             lineHeight: '1.1',
             fontWeight: '800',
-            fontFamily: 'font-sans',
           },
         ],
         h2: [
@@ -28,7 +27,6 @@ export default {
             // 60px
             lineHeight: '1.1',
             fontWeight: '700',
-            fontFamily: 'font-heading',
           },
         ],
         h3: [
@@ -37,7 +35,6 @@ export default {
             // 48px
             lineHeight: '1.2',
             fontWeight: '700',
-            fontFamily: 'font-heading',
           },
         ],
         h4: [
@@ -46,7 +43,6 @@ export default {
             // 36px
             lineHeight: '1.2',
             fontWeight: '600',
-            fontFamily: 'font-heading',
           },
         ],
         h5: [
@@ -55,7 +51,6 @@ export default {
             // 30px
             lineHeight: '1.3',
             fontWeight: '600',
-            fontFamily: 'font-heading',
           },
         ],
         h6: [
@@ -64,12 +59,10 @@ export default {
             // 24px
             lineHeight: '1.3',
             fontWeight: '600',
-            fontFamily: 'font-heading',
           },
         ],
       },
       fontFamily: {
-        sans: ['Newsreader', 'system-ui', '-apple-system', 'serif'],
         heading: ['Funnel Sans', 'system-ui', '-apple-system', 'sans-serif'],
       },
       colors: {
