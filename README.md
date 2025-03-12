@@ -19,8 +19,10 @@ For a fresh project without Git history:
 ```bash
 pnpm dlx degit shynnobi/vite-starter-light my-app
 cd my-app
-pnpm install
 git init
+pnpm install
+git add .
+git commit -m "Initial commit"
 pnpm dev
 ```
 
@@ -41,8 +43,9 @@ This method creates a new repository from the template while preserving the Git 
 ```bash
 git clone https://github.com/shynnobi/vite-starter-light.git my-app
 cd my-app
-pnpm install  # or npm install, or yarn
-pnpm dev      # start development server
+git init
+pnpm install
+pnpm dev
 ```
 
 📌 **Note:** This method includes the full Git history of the template. If you prefer a clean start without commit history, use the `degit` method above.
